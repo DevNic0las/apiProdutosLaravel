@@ -78,4 +78,10 @@ class ProductsController extends Controller
     $productDeleted->delete();
     return new ProductsResource($productDeleted);
   }
+  public function searchProduct(Request $request)
+  {
+    $data = $request->input('product_name');
+    $product = Product::where('product_name', 'LIKE', $data . "%")->first();
+    return new ProductsResource($product);
+  }
 }
