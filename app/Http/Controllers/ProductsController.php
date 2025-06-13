@@ -83,7 +83,7 @@ class ProductsController extends Controller
   public function searchProduct(Request $request)
   {
     $data = $request->input('product_name');
-    $product = Product::where('product_name', 'LIKE', $data . "%")->first();
-    return new ProductsResource($product);
+    $product = Product::where('product_name', 'LIKE', $data . "%")->get();
+    return ProductsResource::collection($product);
   }
 }
