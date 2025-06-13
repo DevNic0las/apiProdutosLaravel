@@ -1,8 +1,7 @@
-# 🛍️ spaProdutos – Sistema Fullstack de Produtos
+# Backend - CRUD de produtos
 
 Este projeto é uma aplicação fullstack com:
 
-- **Frontend**: Vue 3 + Vite
 - **Backend (API)**: Laravel
 - Funcionalidades de **autenticação de usuários** e **CRUD de produtos**
 
@@ -47,7 +46,7 @@ cd spaProdutos
 ### 📁 Acesse a pasta do backend
 
 ```bash
-cd backend
+cd Nome da pasta
 ```
 
 ### 📥 Instale as dependências PHP
