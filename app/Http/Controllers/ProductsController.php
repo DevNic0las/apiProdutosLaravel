@@ -14,7 +14,7 @@ class ProductsController extends Controller
    */
   public function index()
   {
-    return ProductsResource::collection(Product::all());
+    return  ProductsResource::collection(Product::with("categories")->get());
   }
 
   /**
@@ -26,6 +26,7 @@ class ProductsController extends Controller
       'product_name' => ['required', 'string', 'max:255'],
       'price' => ['required', 'numeric'],
       'amount' => ['required', 'numeric'],
+      'categories_id' => ['required', 'numeric']
     ]);
     $slug = Str::slug($data['product_name']);
 
@@ -34,6 +35,7 @@ class ProductsController extends Controller
       'price' => $data['price'],
       'amount' => $data['amount'],
       'slug' => $slug,
+      'categories_id' => $data['categories_id']
     ]);
     return new ProductsResource($createProduct);
   }

@@ -21,6 +21,9 @@ class ProductsResource extends JsonResource
             'uuid'=>$this->uuid,
             'price'=>$this->price,
             'amount'=>$this->amount,
+            'categories_id'=>$this->categories_id,
+            'category'=>$this->categories->categorie_name
+            
         ];
     }
 }
